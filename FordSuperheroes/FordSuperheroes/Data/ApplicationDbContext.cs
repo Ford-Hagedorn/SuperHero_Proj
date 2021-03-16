@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using FordSuperheroes.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ namespace FordSuperheroes.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        DbSet<Hero> Superhero;
+        public DbSet<Hero> Superhero { get; set; }
+
+        
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
